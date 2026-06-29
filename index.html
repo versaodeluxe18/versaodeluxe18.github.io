@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIMENTO - Aplicativo Oficial</title>
+    <style>
+        :root {
+            --primary-color: #ff6b00; /* Cor laranja moderna, mude se o app tiver outra identidade */
+            --dark-color: #1a1a1a;
+            --light-color: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .app-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
+        }
+
+        .btn-download:hover {
+            background-color: #e05e00;
+            transform: scale(1.05);
+        }
+
+        .features {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #bbb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="app-title">MOVIMENTO</h1>
+        <p class="tagline">Transforme sua rotina e evolua no seu próprio ritmo.</p>
+    </header>
+
+    <div class="container">
+        <div class="app-card">
+            <h2>Baixe o App Oficial na Google Play</h2>
+            <p>Tenha acesso a conteúdos exclusivos, cursos e ferramentas completas direto no seu dispositivo Android. Desenvolvido para entregar a melhor experiência em mobilidade e aprendizado.</p>
+            
+            <!-- Link direto para o seu app -->
+            <a href="https://play.google.com/store/apps/details?id=com.aistudio.cursomovimento.mvtcr" target="_blank" class="btn-download" id="download-btn">
+                Disponível na Google Play
+            </a>
+        </div>
+
+        <div class="features">
+            <div class="feature-item">
+                <h3>🚀 Desempenho</h3>
+                <p>Interface rápida, fluida e otimizada para o seu smartphone.</p>
+            </div>
+            <div class="feature-item">
+                <h3>📚 Conteúdo Prático</h3>
+                <p>Acesse o Curso Movimento de forma simples e intuitiva.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> MOVIMENTO. Todos os direitos reservados.</p>
+        <p>Desenvolvido por AI Studio.</p>
+    </footer>
+
+    <script>
+        // JavaScript simples para automação e dinamismo
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. Atualiza o ano do rodapé automaticamente
+            document.getElementById("year").textContent = new Date().getFullYear();
+
+            // 2. Pequeno efeito de clique no botão de download (log de clique)
+            const downloadBtn = document.getElementById("download-btn");
+            downloadBtn.addEventListener("click", function() {
+                console.log("Usuário direcionado para a Google Play Store.");
+            });
+        });
+    </script>
+</body>
+</html>
