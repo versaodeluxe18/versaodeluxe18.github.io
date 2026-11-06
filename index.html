@@ -97,7 +97,7 @@
             border-left: 4px solid var(--primary-color);
         }
 
-        /* Estilo para a seção de Termos */
+        /* Estilo para as seções de Termos */
         .terms-content {
             background: white;
             padding: 40px;
@@ -172,8 +172,8 @@
             </div>
         </div>
 
-        <!-- Conteúdo dos Termos (Oculto por padrão, exibido via #servicomine) -->
-        <div id="terms-view" style="display: none;" class="terms-content">
+        <!-- Termos Minecraft (#servicomine) -->
+        <div id="terms-mine-view" style="display: none;" class="terms-content">
             <h2>Termos de Serviço</h2>
             <p><strong>Última atualização:</strong> 6 de Novembro de 2026</p>
             <p>Ao baixar, instalar ou utilizar o aplicativo Criador e Editor de Skins para Minecraft ("Aplicativo"), você concorda com os presentes Termos de Serviço. Se você não concordar com estes termos, não utilize o Aplicativo.</p>
@@ -206,6 +206,39 @@
             <h3>8. Contato</h3>
             <p>Se tiver dúvidas ou preocupações sobre estes Termos de Serviço, entre em contato através do e-mail de suporte fornecido na página do Aplicativo na Google Play Store.</p>
         </div>
+
+        <!-- Termos Mundo Gamer (#servicogame) -->
+        <div id="terms-game-view" style="display: none;" class="terms-content">
+            <h2>Termos de Serviço — Mundo Gamer</h2>
+            <p><strong>Última atualização:</strong> 6 de novembro de 2026</p>
+            <p>Ao transferir, instalar ou utilizar o aplicativo Mundo Gamer ("Aplicativo"), você concorda em cumprir e estar vinculado aos seguintes Termos de Serviço. Se você não concordar com estes termos, não utilize o Aplicativo.</p>
+
+            <h3>1. Aceitação dos Termos</h3>
+            <p>Ao acessar ou usar o Mundo Gamer, você declara ter idade legal para aceitar estes termos ou possuir autorização dos pais ou responsáveis legais.</p>
+
+            <h3>2. Uso do Aplicativo</h3>
+            <ul>
+                <li>O Aplicativo destina-se a uso pessoal e não comercial.</li>
+                <li>Você concorda em não utilizar o Aplicativo para fins ilegais, não autorizados ou que violem os direitos de terceiros.</li>
+                <li>É proibido tentar descompilar, realizar engenharia reversa ou interromper o funcionamento do Aplicativo ou dos serviços associados.</li>
+            </ul>
+
+            <h3>3. Propriedade Intelectual</h3>
+            <p>Todo o conteúdo do Aplicativo (marcas, logotipos, interface de usuário, gráficos e código-fonte) é de propriedade exclusiva do Mundo Gamer ou de seus licenciadores, sendo protegido pelas leis de direitos autorais e propriedade intelectual.</p>
+
+            <h3>4. Isenção de Garantias e Limitação de Responsabilidade</h3>
+            <ul>
+                <li>O Aplicativo é fornecido "como está" ("as is") e "conforme disponível", sem garantias de qualquer tipo, expressas ou implícitas.</li>
+                <li>Não garantimos que o funcionamento do Aplicativo será ininterrupto ou livre de erros.</li>
+                <li>Em nenhuma circunstância os desenvolvedores serão responsáveis por quaisquer danos diretos, indiretos, incidentais ou consequentes decorrentes do uso ou da impossibilidade de uso do Aplicativo.</li>
+            </ul>
+
+            <h3>5. Alterações nos Termos</h3>
+            <p>Reservamo-nos o direito de modificar estes Termos de Serviço a qualquer momento. Alterações entram em vigor imediatamente após a publicação da versão atualizada. O uso continuado do Aplicativo após eventuais alterações constitui sua aceitação dos novos termos.</p>
+
+            <h3>6. Contato</h3>
+            <p>Caso tenha dúvidas sobre estes Termos de Serviço, entre em contato pelo e-mail fornecido na página do desenvolvedor no Google Play Console.</p>
+        </div>
     </div>
 
     <footer>
@@ -226,13 +259,20 @@
                 });
             }
 
-            // Lógica para verificar a hash #servicomine
-            if (window.location.hash === "#servicomine") {
-                document.getElementById("default-view").style.display = "none";
-                document.getElementById("terms-view").style.display = "block";
-                
-                // Opcional: Altera o título da página para refletir os termos
-                document.title = "Termos de Serviço - Aplicativo Minecraft";
+            // Lógica de roteamento dinâmico via hash da URL
+            const hash = window.location.hash;
+            const defaultView = document.getElementById("default-view");
+            const termsMineView = document.getElementById("terms-mine-view");
+            const termsGameView = document.getElementById("terms-game-view");
+
+            if (hash === "#servicomine") {
+                defaultView.style.display = "none";
+                termsMineView.style.display = "block";
+                document.title = "Termos de Serviço - Minecraft Skin Editor";
+            } else if (hash === "#servicogame") {
+                defaultView.style.display = "none";
+                termsGameView.style.display = "block";
+                document.title = "Termos de Serviço - Mundo Gamer";
             }
         });
     </script>
