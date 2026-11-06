@@ -239,6 +239,53 @@
             <h3>6. Contato</h3>
             <p>Caso tenha dúvidas sobre estes Termos de Serviço, entre em contato pelo e-mail fornecido na página do desenvolvedor no Google Play Console.</p>
         </div>
+
+        <!-- Termos MOVIMENTO (#servicomovimento) -->
+        <div id="terms-movimento-view" style="display: none;" class="terms-content">
+            <h2>Termos de Serviço — MOVIMENTO</h2>
+            <p><strong>Última atualização:</strong> 6 de novembro de 2026</p>
+            <p>Bem-vindo ao MOVIMENTO. Ao baixar, instalar ou utilizar nosso aplicativo, você concorda com os presentes Termos de Serviço. Leia atentamente as condições abaixo descritas.</p>
+
+            <h3>1. Aceitação dos Termos</h3>
+            <p>Ao acessar ou usar o aplicativo MOVIMENTO, você declara que leu, compreendeu e concorda em cumprir estes Termos de Serviço e nossa Política de Privacidade. Caso não concorde com qualquer trecho destes termos, você não deve utilizar o aplicativo.</p>
+
+            <h3>2. Descrição do Serviço</h3>
+            <p>O MOVIMENTO é um aplicativo educacional desenvolvido para auxiliar os usuários nos estudos, oferecendo conteúdos de cursos, simulados, lições interativas e recursos de acompanhamento de aprendizagem.</p>
+
+            <h3>3. Uso do Aplicativo e Licença</h3>
+            <p>Concedemos a você uma licença pessoal, não exclusiva, intransferível e revogável para baixar, instalar e utilizar o MOVIMENTO em dispositivos compatíveis, estritamente para uso pessoal e não comercial.</p>
+            <p>Você se compromete a:</p>
+            <ul>
+                <li>Não utilizar o aplicativo para qualquer finalidade ilegal ou proibida por estes termos.</li>
+                <li>Não copiar, modificar, distribuir, vender, licenciar ou realizar engenharia reversa de qualquer parte do aplicativo ou de seu conteúdo.</li>
+                <li>Não tentar burlar nem comprometer a segurança, integridade ou funcionamento das ferramentas do aplicativo.</li>
+            </ul>
+
+            <h3>4. Cadastro e Segurança de Conta</h3>
+            <p>Para acessar determinados recursos do aplicativo, pode ser necessário criar uma conta ou autenticar-se. Você é o único responsável por manter a confidencialidade de suas credenciais de acesso e por todas as atividades realizadas em sua conta.</p>
+
+            <h3>5. Propriedade Intelectual</h3>
+            <p>Todo o conteúdo disponibilizado no MOVIMENTO — incluindo textos, gráficos, logotipos, ícones, imagens, códigos, áudios, simulações e materiais didáticos — é de propriedade exclusiva dos desenvolvedores do aplicativo ou de seus licenciadores, sendo protegido pelas leis de direitos autorais e propriedade intelectual.</p>
+
+            <h3>6. Isenção de Garantias</h3>
+            <p>O aplicativo e todo o seu conteúdo são fornecidos "como estão" (as is) e "conforme disponíveis", sem garantias de qualquer tipo, expressas ou implícitas. Embora nos esforcemos para manter o conteúdo preciso e atualizado:</p>
+            <ul>
+                <li>Não garantimos aprovação em exames (como o ENEM ou vestibulares).</li>
+                <li>Não garantimos que o funcionamento do aplicativo será ininterrupto, livre de erros ou falhas operacionais.</li>
+            </ul>
+
+            <h3>7. Limitação de Responsabilidade</h3>
+            <p>Na extensão máxima permitida pela legislação aplicável, os desenvolvedores do MOVIMENTO não serão responsáveis por quaisquer danos diretos, indiretos, incidentais, especiais ou consequentes decorrentes do uso ou da impossibilidade de uso do aplicativo.</p>
+
+            <h3>8. Alterações no Serviço e nos Termos</h3>
+            <p>Reservamo-nos o direito de alterar, suspender ou descontinuar qualquer recurso do aplicativo, bem como de atualizar estes Termos de Serviço a qualquer momento. Alterações significativas serão informadas por meio do aplicativo ou pela atualização da data no topo deste documento. O uso continuado após alterações implica aceitação dos novos termos.</p>
+
+            <h3>9. Rescisão</h3>
+            <p>Podemos encerrar ou suspender o seu acesso ao aplicativo imediatamente, sem aviso prévio, se houver violação destes Termos de Serviço ou uso inadequado da plataforma.</p>
+
+            <h3>10. Contato</h3>
+            <p>Se você tiver dúvidas, sugestões ou solicitações relacionadas a estes Termos de Serviço, entre em contato conosco através do e-mail de suporte fornecido na página do aplicativo no Google Play Console.</p>
+        </div>
     </div>
 
     <footer>
@@ -264,6 +311,7 @@
             const defaultView = document.getElementById("default-view");
             const termsMineView = document.getElementById("terms-mine-view");
             const termsGameView = document.getElementById("terms-game-view");
+            const termsMovimentoView = document.getElementById("terms-movimento-view");
 
             if (hash === "#servicomine") {
                 defaultView.style.display = "none";
@@ -273,6 +321,10 @@
                 defaultView.style.display = "none";
                 termsGameView.style.display = "block";
                 document.title = "Termos de Serviço - Mundo Gamer";
+            } else if (hash === "#servicomovimento") {
+                defaultView.style.display = "none";
+                termsMovimentoView.style.display = "block";
+                document.title = "Termos de Serviço - MOVIMENTO";
             }
         });
     </script>
