@@ -6,7 +6,7 @@
     <title>MOVIMENTO - Aplicativo Oficial</title>
     <style>
         :root {
-            --primary-color: #ff6b00; /* Cor laranja moderna, mude se o app tiver outra identidade */
+            --primary-color: #ff6b00;
             --dark-color: #1a1a1a;
             --light-color: #f4f4f4;
         }
@@ -97,6 +97,35 @@
             border-left: 4px solid var(--primary-color);
         }
 
+        /* Estilo para a seção de Termos */
+        .terms-content {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .terms-content h2 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .terms-content h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .terms-content p, .terms-content ul {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .terms-content ul {
+            padding-left: 20px;
+        }
+
         footer {
             background-color: var(--dark-color);
             color: #888;
@@ -119,26 +148,63 @@
         <p class="tagline">Transforme sua rotina e evolua no seu próprio ritmo.</p>
     </header>
 
-    <div class="container">
-        <div class="app-card">
-            <h2>Baixe o App Oficial na Google Play</h2>
-            <p>Tenha acesso a conteúdos exclusivos, cursos e ferramentas completas direto no seu dispositivo Android. Desenvolvido para entregar a melhor experiência em mobilidade e aprendizado.</p>
-            
-            <!-- Link direto para o seu app -->
-            <a href="https://play.google.com/store/apps/details?id=com.aistudio.cursomovimento.mvtcr" target="_blank" class="btn-download" id="download-btn">
-                Disponível na Google Play
-            </a>
+    <div class="container" id="main-container">
+        <!-- Conteúdo Padrão do Aplicativo -->
+        <div id="default-view">
+            <div class="app-card">
+                <h2>Baixe o App Oficial na Google Play</h2>
+                <p>Tenha acesso a conteúdos exclusivos, cursos e ferramentas completas direto no seu dispositivo Android. Desenvolvido para entregar a melhor experiência em mobilidade e aprendizado.</p>
+                
+                <a href="https://play.google.com/store/apps/details?id=com.aistudio.cursomovimento.mvtcr" target="_blank" class="btn-download" id="download-btn">
+                    Disponível na Google Play
+                </a>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <h3>🚀 Desempenho</h3>
+                    <p>Interface rápida, fluida e otimizada para o seu smartphone.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>📚 Conteúdo Prático</h3>
+                    <p>Acesse o Curso Movimento de forma simples e intuitiva.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="features">
-            <div class="feature-item">
-                <h3>🚀 Desempenho</h3>
-                <p>Interface rápida, fluida e otimizada para o seu smartphone.</p>
-            </div>
-            <div class="feature-item">
-                <h3>📚 Conteúdo Prático</h3>
-                <p>Acesse o Curso Movimento de forma simples e intuitiva.</p>
-            </div>
+        <!-- Conteúdo dos Termos (Oculto por padrão, exibido via #servicomine) -->
+        <div id="terms-view" style="display: none;" class="terms-content">
+            <h2>Termos de Serviço</h2>
+            <p><strong>Última atualização:</strong> 6 de Novembro de 2026</p>
+            <p>Ao baixar, instalar ou utilizar o aplicativo Criador e Editor de Skins para Minecraft ("Aplicativo"), você concorda com os presentes Termos de Serviço. Se você não concordar com estes termos, não utilize o Aplicativo.</p>
+            
+            <h3>1. Aceitação dos Termos</h3>
+            <p>Ao acessar ou usar este Aplicativo, você declara que tem idade legal para aceitar estes termos ou possui a autorização dos seus pais ou responsáveis legais.</p>
+            
+            <h3>2. Isenção de Vinculação (Aviso Legal)</h3>
+            <p>Este Aplicativo não é um produto oficial da Mojang AB ou da Microsoft Corporation e não possui qualquer vínculo, patrocínio ou afiliação com a Mojang AB, Microsoft ou marcas associadas. "Minecraft" é uma marca registrada da Mojang AB. Todas as criações e conteúdos dentro do app respeitam as diretrizes públicas da comunidade e fãs.</p>
+            
+            <h3>3. Uso do Aplicativo e Licença</h3>
+            <ul>
+                <li>Concedemos a você uma licença pessoal, não exclusiva, intransferível e revogável para usar o Aplicativo para fins pessoais e não comerciais.</li>
+                <li>As skins criadas e editadas por você no Aplicativo podem ser exportadas para uso pessoal dentro do jogo Minecraft, respeitando os termos da Mojang AB.</li>
+                <li>É proibido utilizar o Aplicativo de maneira fraudulenta, abusiva ou violando leis aplicáveis.</li>
+            </ul>
+            
+            <h3>4. Conteúdo Criado pelo Usuário</h3>
+            <p>Você é o único responsável pelas skins, artes e personalizações criadas ou importadas utilizando o Aplicativo. O Aplicativo armazena suas criações localmente no seu dispositivo, a menos que especificado em contrário.</p>
+            
+            <h3>5. Anúncios e Serviços de Terceiros</h3>
+            <p>O Aplicativo pode exibir anúncios (como o Google AdMob) e utilizar serviços de terceiros para seu funcionamento e análise. O uso desses serviços é regido pelas políticas de privacidade e termos de serviço de cada fornecedor terceiro.</p>
+            
+            <h3>6. Limitação de Responsabilidade</h3>
+            <p>O Aplicativo é fornecido "como está" e "conforme disponível", sem garantias de qualquer tipo, expressas ou implícitas. Não nos responsabilizamos por perdas de dados, incompatibilidades ou interrupções no funcionamento do Aplicativo ou do jogo.</p>
+            
+            <h3>7. Alterações nestes Termos</h3>
+            <p>Podemos atualizar estes Termos de Serviço periodicamente. Recomendamos revisar esta página regularmente. O uso continuado do Aplicativo após alterações constitui aceitação dos novos termos.</p>
+            
+            <h3>8. Contato</h3>
+            <p>Se tiver dúvidas ou preocupações sobre estes Termos de Serviço, entre em contato através do e-mail de suporte fornecido na página do Aplicativo na Google Play Store.</p>
         </div>
     </div>
 
@@ -148,16 +214,26 @@
     </footer>
 
     <script>
-        // JavaScript simples para automação e dinamismo
         document.addEventListener("DOMContentLoaded", function() {
-            // 1. Atualiza o ano do rodapé automaticamente
+            // Atualiza o ano do rodapé automaticamente
             document.getElementById("year").textContent = new Date().getFullYear();
 
-            // 2. Pequeno efeito de clique no botão de download (log de clique)
+            // Interação do botão de download
             const downloadBtn = document.getElementById("download-btn");
-            downloadBtn.addEventListener("click", function() {
-                console.log("Usuário direcionado para a Google Play Store.");
-            });
+            if (downloadBtn) {
+                downloadBtn.addEventListener("click", function() {
+                    console.log("Usuário direcionado para a Google Play Store.");
+                });
+            }
+
+            // Lógica para verificar a hash #servicomine
+            if (window.location.hash === "#servicomine") {
+                document.getElementById("default-view").style.display = "none";
+                document.getElementById("terms-view").style.display = "block";
+                
+                // Opcional: Altera o título da página para refletir os termos
+                document.title = "Termos de Serviço - Aplicativo Minecraft";
+            }
         });
     </script>
 </body>
