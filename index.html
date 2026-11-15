@@ -440,46 +440,65 @@
         <li>Pelo aplicativo: <em>Perfil &gt; Suporte &gt; Fale conosco</em></li>
         <li>Por e-mail: <a href="mailto:versaodeluxe@gmail.com">versaodeluxe@gmail.com</a></li>
     </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> MOVIMENTO. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Atualiza o ano do rodapé automaticamente
-            document.getElementById("year").textContent = new Date().getFullYear();
+        document.addEventListener("DOMContentLoaded", function () {
+            const year = document.getElementById("year");
+            if (year) year.textContent = new Date().getFullYear();
 
-            // Interação do botão de download
+            const views = {
+                "#servicomine": {
+                    element: document.getElementById("terms-mine-view"),
+                    title: "Termos de Serviço - Minecraft Skin Editor"
+                },
+                "#servicogame": {
+                    element: document.getElementById("terms-game-view"),
+                    title: "Termos de Serviço - Mundo Gamer"
+                },
+                "#servicomovimento": {
+                    element: document.getElementById("terms-movimento-view"),
+                    title: "Termos de Serviço - MOVIMENTO"
+                },
+                "#projetoasmr": {
+                    element: document.getElementById("terms-projetoasmr-view"),
+                    title: "Política de Privacidade e Termos de Uso - Projeto ASMR"
+                }
+            };
+
+            const defaultView = document.getElementById("default-view");
+            const allViews = Object.values(views).map(view => view.element).filter(Boolean);
+
+            function renderRoute() {
+                const selected = views[window.location.hash];
+                allViews.forEach(view => { view.style.display = "none"; });
+
+                if (selected && selected.element) {
+                    if (defaultView) defaultView.style.display = "none";
+                    selected.element.style.display = "block";
+                    document.title = selected.title;
+                } else {
+                    if (defaultView) defaultView.style.display = "block";
+                    document.title = "MOVIMENTO - Aplicativo Oficial";
+                }
+
+                window.scrollTo(0, 0);
+            }
+
             const downloadBtn = document.getElementById("download-btn");
             if (downloadBtn) {
-                downloadBtn.addEventListener("click", function() {
+                downloadBtn.addEventListener("click", function () {
                     console.log("Usuário direcionado para a Google Play Store.");
                 });
             }
 
-            // Lógica de roteamento dinâmico via hash da URL
-            const hash = window.location.hash;
-            const defaultView = document.getElementById("default-view");
-            const termsMineView = document.getElementById("terms-mine-view");
-            const termsGameView = document.getElementById("terms-game-view");
-            const termsMovimentoView = document.getElementById("terms-movimento-view");
-            const termsProjetoAsmrView = document.getElementById("terms-projetoasmr-view");
-
-            if (hash === "#servicomine") {
-                defaultView.style.display = "none";
-                termsMineView.style.display = "block";
-                document.title = "Termos de Serviço - Minecraft Skin Editor";
-            } else if (hash === "#servicogame") {
-                defaultView.style.display = "none";
-                termsGameView.style.display = "block";
-                document.title = "Termos de Serviço - Mundo Gamer";
-            } else if (hash === "#servicomovimento") {
-                defaultView.style.display = "none";
-                termsMovimentoView.style.display = "block";
-                document.title = "Termos de Serviço - MOVIMENTO";
-            } else if (hash === "#projetoasmr") {
-                defaultView.style.display = "none";
-                termsProjetoAsmrView.style.display = "block";
-                document.title = "Termos de Serviço - PROJETO ASMR";
-            }
+            renderRoute();
+            window.addEventListener("hashchange", renderRoute);
         });
     </script>
 </body>
